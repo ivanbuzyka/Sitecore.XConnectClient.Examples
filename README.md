@@ -203,7 +203,7 @@ Request body example:
 
 **Note**: ```Culture``` and ```Version``` properties can be used to get language/version specific information
 
-Respone example:
+Response example:
 
 ```json
 [
