@@ -227,4 +227,91 @@ Response example:
 {"Name":"Login","Description":"User has logged on","CreatedDate":"2008-12-11T08:54:38Z","CreatedBy":"sitecore\\Admin","LastModifiedBy":"sitecore\\Admin","LastModifiedDate":"2011-05-24T13:31:03.9522488Z"}
 ```
 
-//TBD: Describe more calls for ReferenceData: e.g. get all definitions by type, get definition types etc.
+### ReferenceData. Getting a page of definitions by definition type
+
+This call is supposed to get the paginated response of definitions by specific definition type
+
+Method: ```GET```
+
+Endpoint: ```https://fxmdemo.xconnect/refdata/definition/getbytype?typeKey=f75fc6c9-0af1-45dc-ac6d-05aca95878e1&latestActiveOnly=False&pageNumber=1&pageSize=20```
+
+The ```typeKey``` is the ID of the definition type, other parameters define page number and page size.
+
+Response example:
+
+```json
+{
+  "Total": 6,
+  "PageNumber": 1,
+  "PageSize": 20,
+  "Definitions": [
+    {
+      "CommonData": "eyJFbmdhZ2VtZW50VmFsdWVQb2ludHMiOjAsIklzTGl2ZUV2ZW50IjpmYWxzZSwiU2hvd0luWGZpbGVBc0xhdGVzdEV2ZW50Ijp0cnVlLCJTaG93SW5YZmlsZUV2ZW50c0xpc3QiOnRydWUsIklzU3lzdGVtIjpmYWxzZSwiQ3VzdG9tVmFsdWVzIjp7fSwiQ2xhc3NpZmljYXRpb25zIjp7fSwiQWxpYXMiOiJOZXdzbGV0dGVyIFNpZ251cCJ9",
+      "CultureData": {
+        "en": "eyJOYW1lIjoiTmV3c2xldHRlciBzaWdudXAiLCJEZXNjcmlwdGlvbiI6IlVzZXIgaGFzIHNpZ25lZCB1cCBmb3IgYSBuZXdzbGV0dGVyIiwiQ3JlYXRlZERhdGUiOiIyMDA4LTEyLTExVDA3OjU0OjM5WiIsIkNyZWF0ZWRCeSI6InNpdGVjb3JlXFxBZG1pbiIsIkxhc3RNb2RpZmllZEJ5Ijoic2l0ZWNvcmVcXEFkbWluIiwiTGFzdE1vZGlmaWVkRGF0ZSI6IjIwMTQtMTAtMTZUMTE6MDI6MDMuMDY4ODE5M1oifQ=="
+      },
+      "DataTypeRevision": 1,
+      "Key": "MTc3OWNjNDItZWY3YS00YzU4LWJmMTktZmE4NWQzMDc1NWM5:f75fc6c9-0af1-45dc-ac6d-05aca95878e1:1",
+      "TypeKey": { "Id": "f75fc6c9-0af1-45dc-ac6d-05aca95878e1" },
+      "IsActive": true,
+      "LastModified": "2022-07-29T10:22:37Z"
+    },
+    {
+      "CommonData": "eyJFbmdhZ2VtZW50VmFsdWVQb2ludHMiOjAsIklzTGl2ZUV2ZW50IjpmYWxzZSwiU2hvd0luWGZpbGVBc0xhdGVzdEV2ZW50Ijp0cnVlLCJTaG93SW5YZmlsZUV2ZW50c0xpc3QiOnRydWUsIklzU3lzdGVtIjpmYWxzZSwiQ3VzdG9tVmFsdWVzIjp7fSwiQ2xhc3NpZmljYXRpb25zIjp7fSwiQWxpYXMiOiJJbnN0YW50IERlbW8ifQ==",
+      "CultureData": {
+        "en": "eyJOYW1lIjoiSW5zdGFudCBkZW1vIiwiRGVzY3JpcHRpb24iOiJVc2VyIGhhcyBzaWduZWQgdXAgZm9yIGFuIGluc3RhbnQgZGVtbyIsIkNyZWF0ZWREYXRlIjoiMjAwOC0xMi0xOFQwODo1OTowMloiLCJDcmVhdGVkQnkiOiJzaXRlY29yZVxcQWRtaW4iLCJMYXN0TW9kaWZpZWRCeSI6InNpdGVjb3JlXFxBZG1pbiIsIkxhc3RNb2RpZmllZERhdGUiOiIyMDE0LTEwLTE2VDExOjAxOjU0LjUwNzk0MzdaIn0="
+      },
+      "DataTypeRevision": 1,
+      "Key": "MjhhN2M5NDQtYjhiNi00NWFkLWE2MzUtNmY3MmU4ZjgxZjY5:f75fc6c9-0af1-45dc-ac6d-05aca95878e1:1",
+      "TypeKey": { "Id": "f75fc6c9-0af1-45dc-ac6d-05aca95878e1" },
+      "IsActive": true,
+      "LastModified": "2022-07-29T10:22:33Z"
+    },
+    {
+      "CommonData": "eyJFbmdhZ2VtZW50VmFsdWVQb2ludHMiOjAsIklzTGl2ZUV2ZW50IjpmYWxzZSwiU2hvd0luWGZpbGVBc0xhdGVzdEV2ZW50Ijp0cnVlLCJTaG93SW5YZmlsZUV2ZW50c0xpc3QiOnRydWUsIklzU3lzdGVtIjpmYWxzZSwiQ3VzdG9tVmFsdWVzIjp7fSwiQ2xhc3NpZmljYXRpb25zIjp7fSwiQWxpYXMiOiJMb2dpbiJ9",
+      "CultureData": {
+        "en": "eyJOYW1lIjoiTG9naW4iLCJEZXNjcmlwdGlvbiI6IlVzZXIgaGFzIGxvZ2dlZCBvbiIsIkNyZWF0ZWREYXRlIjoiMjAwOC0xMi0xMVQwODo1NDozOFoiLCJDcmVhdGVkQnkiOiJzaXRlY29yZVxcQWRtaW4iLCJMYXN0TW9kaWZpZWRCeSI6InNpdGVjb3JlXFxBZG1pbiIsIkxhc3RNb2RpZmllZERhdGUiOiIyMDExLTA1LTI0VDEzOjMxOjAzLjk1MjI0ODhaIn0="
+      },
+      "DataTypeRevision": 1,
+      "Key": "NjY3MjJmNTItMmQxMy00ZGNjLTkwZmMtZWE3MTE3Y2YyMjk4:f75fc6c9-0af1-45dc-ac6d-05aca95878e1:1",
+      "TypeKey": { "Id": "f75fc6c9-0af1-45dc-ac6d-05aca95878e1" },
+      "IsActive": true,
+      "LastModified": "2022-07-29T10:22:35Z"
+    },
+    {
+      "CommonData": "eyJFbmdhZ2VtZW50VmFsdWVQb2ludHMiOjAsIklzTGl2ZUV2ZW50IjpmYWxzZSwiU2hvd0luWGZpbGVBc0xhdGVzdEV2ZW50Ijp0cnVlLCJTaG93SW5YZmlsZUV2ZW50c0xpc3QiOnRydWUsIklzU3lzdGVtIjpmYWxzZSwiQ3VzdG9tVmFsdWVzIjp7fSwiQ2xhc3NpZmljYXRpb25zIjp7fSwiQWxpYXMiOiJDbGljayBFbWFpbCBMaW5rIn0=",
+      "CultureData": {
+        "en": "eyJOYW1lIjoiQ2xpY2sgRW1haWwgTGluayIsIkRlc2NyaXB0aW9uIjoiIiwiQ3JlYXRlZERhdGUiOiIyMDExLTA1LTI1VDA4OjIzOjAwWiIsIkNyZWF0ZWRCeSI6InNpdGVjb3JlXFxBZG1pbiIsIkxhc3RNb2RpZmllZEJ5Ijoic2l0ZWNvcmVcXEFkbWluIiwiTGFzdE1vZGlmaWVkRGF0ZSI6IjIwMTUtMDktMDNUMTE6MzY6MDlaIn0="
+      },
+      "DataTypeRevision": 1,
+      "Key": "ODc0MzFiOWItZmEzOS00NzgwLWJlYjMtMTA0N2I5ZTYxODc2:f75fc6c9-0af1-45dc-ac6d-05aca95878e1:1",
+      "TypeKey": { "Id": "f75fc6c9-0af1-45dc-ac6d-05aca95878e1" },
+      "IsActive": true,
+      "LastModified": "2022-07-29T10:22:40Z"
+    },
+    {
+      "CommonData": "eyJFbmdhZ2VtZW50VmFsdWVQb2ludHMiOjAsIklzTGl2ZUV2ZW50IjpmYWxzZSwiU2hvd0luWGZpbGVBc0xhdGVzdEV2ZW50Ijp0cnVlLCJTaG93SW5YZmlsZUV2ZW50c0xpc3QiOnRydWUsIklzU3lzdGVtIjpmYWxzZSwiQ3VzdG9tVmFsdWVzIjp7fSwiQ2xhc3NpZmljYXRpb25zIjp7fSwiQWxpYXMiOiJSZWdpc3RlciJ9",
+      "CultureData": {
+        "en": "eyJOYW1lIjoiUmVnaXN0ZXIiLCJEZXNjcmlwdGlvbiI6IlVzZXIgaGFzIHJlZ2lzdGVyZWQiLCJDcmVhdGVkRGF0ZSI6IjIwMDgtMTItMTFUMDg6NTQ6MDBaIiwiQ3JlYXRlZEJ5Ijoic2l0ZWNvcmVcXEFkbWluIiwiTGFzdE1vZGlmaWVkQnkiOiJzaXRlY29yZVxcQWRtaW4iLCJMYXN0TW9kaWZpZWREYXRlIjoiMjAxMS0wNS0yNFQxMzozMToxMC4zMTY4ODUyWiJ9"
+      },
+      "DataTypeRevision": 1,
+      "Key": "OGZmYjE4M2ItZGExYS00Yzc0LThmM2EtOTcyOWU5ZmNmZjZh:f75fc6c9-0af1-45dc-ac6d-05aca95878e1:1",
+      "TypeKey": { "Id": "f75fc6c9-0af1-45dc-ac6d-05aca95878e1" },
+      "IsActive": true,
+      "LastModified": "2022-07-29T10:22:39Z"
+    },
+    {
+      "CommonData": "eyJFbmdhZ2VtZW50VmFsdWVQb2ludHMiOjAsIklzTGl2ZUV2ZW50IjpmYWxzZSwiU2hvd0luWGZpbGVBc0xhdGVzdEV2ZW50Ijp0cnVlLCJTaG93SW5YZmlsZUV2ZW50c0xpc3QiOnRydWUsIklzU3lzdGVtIjpmYWxzZSwiQ3VzdG9tVmFsdWVzIjp7fSwiQ2xhc3NpZmljYXRpb25zIjp7fSwiQWxpYXMiOiJCcm9jaHVyZXMgUmVxdWVzdCJ9",
+      "CultureData": {
+        "en": "eyJOYW1lIjoiQnJvY2h1cmVzIHJlcXVlc3QiLCJEZXNjcmlwdGlvbiI6IlVzZXIgaGFzIHJlcXVlc3RlZCBhIGJyb2NodXJlIiwiQ3JlYXRlZERhdGUiOiIyMDA4LTEyLTExVDA3OjU0OjM4WiIsIkNyZWF0ZWRCeSI6InNpdGVjb3JlXFxBZG1pbiIsIkxhc3RNb2RpZmllZEJ5Ijoic2l0ZWNvcmVcXEFkbWluIiwiTGFzdE1vZGlmaWVkRGF0ZSI6IjIwMTQtMTAtMTZUMTE6MDE6NDQuNzQ0ODczNVoifQ=="
+      },
+      "DataTypeRevision": 1,
+      "Key": "OTY4ODk3ZjEtMzI4YS00ODlkLTg4ZTgtYmU3OGY0MzcwOTU4:f75fc6c9-0af1-45dc-ac6d-05aca95878e1:1",
+      "TypeKey": { "Id": "f75fc6c9-0af1-45dc-ac6d-05aca95878e1" },
+      "IsActive": true,
+      "LastModified": "2022-07-29T10:22:30Z"
+    }
+  ]
+}
+
+```
