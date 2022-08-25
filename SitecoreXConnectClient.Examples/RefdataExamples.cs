@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Sitecore.Marketing.Operations.Xdb.ReferenceData.Model.Definitions.Goals;
 using Sitecore.Xdb.Common.Web;
 using Sitecore.Xdb.ReferenceData.Client;
 using Sitecore.Xdb.ReferenceData.Core;
@@ -18,7 +19,7 @@ namespace SitecoreXConnectClient.Examples
 
       //The ID of the login Goal
       var criteria = new DefinitionCriteria("66722f52-2d13-4dcc-90fc-ea7117cf2298", definitionType);
-      var definition = await refDataClient.GetDefinitionAsync<string, string>(criteria, false);
+      var definition = await refDataClient.GetDefinitionAsync<GoalCommonData, GoalCultureData>(criteria, false);
 
       //var definitions = await refDataClient.GetDefinitionsByTypeAsync<string, string>(definitionType, true, 1, 10);
       //var pageOneDefinitions = definitions.Definitions;

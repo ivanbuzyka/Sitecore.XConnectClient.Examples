@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Sitecore.Marketing.Operations.Xdb.ReferenceData.Model" Version="9.3.0" />
     <PackageReference Include="Sitecore.XConnect.Client" Version="9.3.0" />
     <PackageReference Include="Sitecore.XConnect.Client.Configuration" Version="9.3.0" />
     <PackageReference Include="Sitecore.Xdb.ReferenceData.Client" Version="9.3.0" />
